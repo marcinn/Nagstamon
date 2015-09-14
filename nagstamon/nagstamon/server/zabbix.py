@@ -38,7 +38,7 @@ import datetime
 
 from nagstamon import actions as Actions
 from nagstamon.objects import *
-from generic import GenericServer
+from nagios import GenericServer
 from nagstamon.thirdparty.zabbix_api import ZabbixAPI, ZabbixAPIException
 
 

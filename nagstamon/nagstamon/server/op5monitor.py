@@ -27,7 +27,7 @@ from datetime import datetime
 
 from nagstamon import actions as Actions
 from nagstamon.objects import *
-from generic import GenericServer, not_empty
+from nagios import GenericServer, not_empty
 
 
 def human_duration(start):

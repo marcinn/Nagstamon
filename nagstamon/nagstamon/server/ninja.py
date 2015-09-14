@@ -30,7 +30,7 @@ import cookielib
 
 from nagstamon import actions as Actions
 from nagstamon.objects import *
-from generic import GenericServer, not_empty
+from nagios import GenericServer, not_empty
 
 # to let Linux distributions use their own BeautifulSoup if existent try importing local BeautifulSoup first
 # see https://sourceforge.net/tracker/?func=detail&atid=1101370&aid=3302612&group_id=236865

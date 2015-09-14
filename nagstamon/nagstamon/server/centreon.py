@@ -25,7 +25,7 @@ import re
 import copy
 
 from nagstamon.objects import *
-from nagstamon.server.generic import GenericServer
+from nagios import GenericServer
 
 
 class CentreonServer(GenericServer):

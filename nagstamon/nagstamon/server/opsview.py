@@ -24,7 +24,7 @@ import copy
 
 from nagstamon import actions as Actions
 from nagstamon.objects import *
-from generic import GenericServer
+from nagios import GenericServer
 
 
 class OpsviewService(GenericService):
