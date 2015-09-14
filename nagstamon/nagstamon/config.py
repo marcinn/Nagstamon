@@ -185,9 +185,11 @@ class Config(object):
             self.configdir = os.path.expanduser('~') + os.sep + ".nagstamon"
 
         self.configfile = self.configdir + os.sep + "nagstamon.conf"
+        self.loggingfile = self.configdir + os.sep + "logging.conf"
 
         # make path fit for actual os, normcase for letters and normpath for path
         self.configfile = os.path.normpath(os.path.normcase(self.configfile))
+        self.loggingfile = os.path.normpath(os.path.normcase(self.loggingfile))
 
         # because the name of the configdir is also stored in the configfile
         # there may be situations where the name gets overwritten by a
@@ -200,6 +202,13 @@ class Config(object):
         # default settings dicts
         self.servers = dict()
         self.actions = dict()
+
+        if os.path.exists(self.loggingfile):
+            import logging.config
+            logging.config.fileConfig(self.loggingfile)
+        else:
+            import logging
+            logging.basicConfig()
 
         if os.path.exists(self.configfile):
             # instantiate a Configparser to parse the conf file
