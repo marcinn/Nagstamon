@@ -37,7 +37,7 @@ CLASSIFIERS = [
 ]
 
 setup(name = 'nagstamon',
-    version = '1.1.0',
+    version = '2.0.0-dev1',
     license = 'GNU GPL v2',
     description = 'Nagios status monitor for desktop',
     long_description = 'Nagstamon is a Nagios status monitor which takes place in systray or on desktop (GNOME, KDE, Windows) as floating statusbar to inform you in realtime about the status of your Nagios and derivatives monitored network. It allows to connect to multiple Nagios, Icinga, Opsview, Op5Monitor, Check_MK/Multisite, Centreon and Thruk servers.',
@@ -48,20 +48,20 @@ setup(name = 'nagstamon',
     download_url = 'https://nagstamon.ifw-dresden.de/files-nagstamon/stable/',
     dependency_links = ['setuptools'],
     scripts = ['nagstamon.py'],
-    packages = ['Nagstamon', 'Nagstamon.Server', 'Nagstamon.thirdparty'],
-    package_dir = {'Nagstamon':'Nagstamon'},
-    package_data = {'Nagstamon':['resources/*']},
+    packages = ['nagstamon', 'nagstamon.server', 'nagstamon.thirdparty'],
+    package_dir = {'nagstamon':'nagstamon'},
+    package_data = {'nagstamon':['resources/*']},
     entry_points = '''
         [nagstamon.servers]
-        Nagios = Nagstamon.Server.Nagios:NagiosServer
-        Centreon = Nagstamon.Server.Centreon:CentreonServer
-        Multisite = Nagstamon.Server.Multisite:MultisiteServer
-        Icinga = Nagstamon.Server.Icinga:IcingaServer
-        op5Monitor = Nagstamon.Server.op5Monitor:Op5MonitorServer
-        Opsview = Nagstamon.Server.Opsview:OpsviewServer
-        Thruk = Nagstamon.Server.Thruk:ThrukServer
-        Zabbix = Nagstamon.Server.Zabbix:ZabbixServer
-        Ninja = Nagstamon.Server.Ninja:NinjaServer
+        Nagios = nagstamon.server.nagios:NagiosServer
+        Centreon = nagstamon.server.centreon:CentreonServer
+        Multisite = nagstamon.server.multisite:MultisiteServer
+        Icinga = nagstamon.server.icinga:IcingaServer
+        op5Monitor = nagstamon.server.op5monitor:Op5MonitorServer
+        Opsview = nagstamon.server.opsview:OpsviewServer
+        Thruk = nagstamon.server.thruk:ThrukServer
+        Zabbix = nagstamon.server.zabbix:ZabbixServer
+        Ninja = nagstamon.server.ninja:NinjaServer
     ''',
-    data_files = [('%s/share/man/man1' % sys.prefix, ['Nagstamon/resources/nagstamon.1'])]
+    data_files = [('%s/share/man/man1' % sys.prefix, ['nagstamon/resources/nagstamon.1'])]
 )

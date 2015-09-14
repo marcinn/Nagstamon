@@ -42,7 +42,7 @@ import gobject
 
 # Initiate Config
 # if modules are not available from central python install try the ones in the same directory
-from Nagstamon.Config import Config
+from nagstamon.config import Config
 conf = Config()
 
 # check for old settings when upgrading from a nagstamon version < 0.8 and convert them
@@ -54,19 +54,19 @@ conf.Convert_Conf_to_Custom_Actions()
 Resources = ""
 try:
     import pkg_resources
-    Resources = pkg_resources.resource_filename("Nagstamon", "resources")
+    Resources = pkg_resources.resource_filename("nagstamon", "resources")
 except Exception, err:
     # get resources directory from current directory - only if not being set before by pkg_resources
     # try-excepts necessary for platforms like Windows .EXE
     join = os.path.join
     normcase = os.path.normcase
-    paths_to_check = [normcase(join(os.getcwd(), "Nagstamon", "resources")),
+    paths_to_check = [normcase(join(os.getcwd(), "nagstamon", "resources")),
             normcase(join(os.getcwd(), "resources"))]
     try:
         # if resources dir is not available in CWD, try the
         # libs dir (site-packages) for the current Python
         from distutils.sysconfig import get_python_lib
-        paths_to_check.append(normcase(join(get_python_lib(), "Nagstamon", "resources")))
+        paths_to_check.append(normcase(join(get_python_lib(), "nagstamon", "resources")))
     except:
         pass
 
@@ -74,12 +74,12 @@ except Exception, err:
     try:
         import site
         site.getusersitepackages() #make sure USER_SITE is set
-        paths_to_check.append(normcase(join(site.USER_SITE, "Nagstamon", "resources")))
+        paths_to_check.append(normcase(join(site.USER_SITE, "nagstamon", "resources")))
     except:
         pass
 
     # add directory nagstamon.py where nagstamon.py resides for cases like 0install without installed pkg-resources
-    paths_to_check.append(os.sep.join(sys.argv[0].split(os.sep)[:-1] + ["Nagstamon", "resources"]))
+    paths_to_check.append(os.sep.join(sys.argv[0].split(os.sep)[:-1] + ["nagstamon", "resources"]))
 
     for path in paths_to_check:
         if os.path.exists(path):
@@ -88,8 +88,8 @@ except Exception, err:
 
 # initialize GUI and actions
 # if modules are not available from central python install try the ones in the same directory
-from Nagstamon import GUI
-from Nagstamon import Actions
+from nagstamon import gui as GUI
+from nagstamon import actions as Actions
 
 
 ###### MAIN ##############

@@ -1,2 +1,6 @@
 *.pyc
 *~
+/nagstamon/dist
+/nagstamon/build
+/nagstamon/*.egg-info
+/*.egg-info

@@ -360,7 +360,7 @@ class Config(object):
                     try:
                         import keyring
                     except:
-                        import Nagstamon.thirdparty.keyring as keyring
+                        import nagstamon.thirdparty.keyring as keyring
                     password = keyring.get_password("Nagstamon", "@".join((servers[server].username,
                                                                            servers[server].monitor_url))) or ""
                     if password == "":
@@ -376,7 +376,7 @@ class Config(object):
                     try:
                         import keyring
                     except:
-                        import Nagstamon.thirdparty.keyring as keyring
+                        import nagstamon.thirdparty.keyring as keyring
                     proxy_password = keyring.get_password("Nagstamon", "@".join(("proxy",
                                                                                  servers[server].proxy_username,
                                                                                  servers[server].proxy_address))) or ""
@@ -567,7 +567,7 @@ class Config(object):
                                     try:
                                         import keyring
                                     except:
-                                        import Nagstamon.thirdparty.keyring as keyring
+                                        import nagstamon.thirdparty.keyring as keyring
                                     # provoke crash if password saving does not work - this is the case
                                     # on newer Ubuntu releases
                                     try:
@@ -585,7 +585,7 @@ class Config(object):
                                 try:
                                     import keyring
                                 except:
-                                    import Nagstamon.thirdparty.keyring as keyring
+                                    import nagstamon.thirdparty.keyring as keyring
                                 if self.__dict__[settingsdir][s].proxy_password != "":
                                     # provoke crash if password saving does not work - this is the case
                                     # on newer Ubuntu releases
@@ -682,7 +682,7 @@ class Config(object):
                 if self.use_system_keyring == True:
                     # hint for packaging: nagstamon.spec always have to match module path
                     # keyring has to be bound to object to be used later
-                    import Nagstamon.thirdparty.keyring as keyring
+                    import nagstamon.thirdparty.keyring as keyring
                     return  not (keyring.get_keyring() is None)
                 else:
                     return False

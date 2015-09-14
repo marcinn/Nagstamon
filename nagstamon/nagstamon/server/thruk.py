@@ -18,7 +18,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
 
-from Nagstamon.Server.Generic import GenericServer
+from generic import GenericServer
 import sys
 import cookielib
 import base64
@@ -32,10 +32,10 @@ import copy
 try:
     from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
 except:
-    from Nagstamon.thirdparty.BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
+    from nagstamon.thirdparty.BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
 
-from Nagstamon.Actions import HostIsFilteredOutByRE, ServiceIsFilteredOutByRE, StatusInformationIsFilteredOutByRE, not_empty
-from Nagstamon.Objects import *
+from nagstamon.actions import HostIsFilteredOutByRE, ServiceIsFilteredOutByRE, StatusInformationIsFilteredOutByRE, not_empty
+from nagstamon.objects import *
 
 
 class ThrukServer(GenericServer):

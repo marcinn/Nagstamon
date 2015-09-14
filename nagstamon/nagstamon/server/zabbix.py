@@ -36,10 +36,10 @@ import base64
 import time
 import datetime
 
-from Nagstamon import Actions
-from Nagstamon.Objects import *
-from Nagstamon.Server.Generic import GenericServer
-from Nagstamon.thirdparty.zabbix_api import ZabbixAPI, ZabbixAPIException
+from nagstamon import actions as Actions
+from nagstamon.objects import *
+from generic import GenericServer
+from nagstamon.thirdparty.zabbix_api import ZabbixAPI, ZabbixAPIException
 
 
 class ZabbixError(Exception):

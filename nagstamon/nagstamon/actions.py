@@ -42,11 +42,10 @@ import urllib2
 import mimetools, mimetypes
 import os, stat
 
-from Nagstamon import Objects
-from Nagstamon.Objects import Result
+import objects as Objects
+from objects import Result
 
-#from Nagstamon import GUI
-import GUI
+import gui as GUI
 
 # import md5 for centreon url autologin encoding
 try:

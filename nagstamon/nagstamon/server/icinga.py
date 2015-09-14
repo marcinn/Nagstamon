@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
 
-from Nagstamon.Server.Generic import GenericServer
+from generic import GenericServer
 import urllib
 import sys
 import copy
@@ -31,10 +31,10 @@ import base64
 try:
     from BeautifulSoup import BeautifulSoup
 except:
-    from Nagstamon.thirdparty.BeautifulSoup import BeautifulSoup
+    from nagstamon.thirdparty.BeautifulSoup import BeautifulSoup
 
-from Nagstamon.Objects import *
-from Nagstamon.Actions import *
+from nagstamon.objects import *
+from nagstamon.actions import *
 
 
 class IcingaServer(GenericServer):

@@ -31,9 +31,9 @@ import webbrowser
 import time
 import copy
 
-from Nagstamon import Actions
-from Nagstamon.Objects import *
-from Nagstamon.Server.Generic import GenericServer
+from nagstamon import actions as Actions
+from nagstamon.objects import *
+from generic import GenericServer
 
 
 class MultisiteError(Exception):

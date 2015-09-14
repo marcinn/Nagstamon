@@ -50,9 +50,9 @@ except:
     pass
 
 # needed for actions e.g. triggered by pressed buttons
-from Nagstamon import Config
-from Nagstamon import Actions
-from Nagstamon import Custom
+import config as Config
+import actions as Actions
+import custom as Custom
 
 
 class Sorting(object):

@@ -28,16 +28,16 @@ import os.path
 import urllib
 import cookielib
 
-from Nagstamon import Actions
-from Nagstamon.Objects import *
-from Nagstamon.Server.Generic import GenericServer, not_empty
+from nagstamon import actions as Actions
+from nagstamon.objects import *
+from generic import GenericServer, not_empty
 
 # to let Linux distributions use their own BeautifulSoup if existent try importing local BeautifulSoup first
 # see https://sourceforge.net/tracker/?func=detail&atid=1101370&aid=3302612&group_id=236865
 try:
     from BeautifulSoup import BeautifulSoup
 except:
-    from Nagstamon.thirdparty.BeautifulSoup import BeautifulSoup
+    from nagstamon.thirdparty.BeautifulSoup import BeautifulSoup
 
 
 class NinjaServer(GenericServer):
